@@ -1,0 +1,3 @@
+[submodule "settings"]
+	path = settings
+	url = git@github.com:bellicapax/knausj_talon_settings.git
