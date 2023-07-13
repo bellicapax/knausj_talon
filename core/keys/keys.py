@@ -254,7 +254,7 @@ alternate_keys = {
     "wipe": "backspace",
     "delete": "backspace",
     #'junk': 'backspace',
-    "forward delete": "delete",
+    "scrub": "delete",
     "page up": "pageup",
     "page down": "pagedown",
 }
