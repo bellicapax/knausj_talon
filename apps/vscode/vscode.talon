@@ -160,6 +160,15 @@ close all tabs: user.vscode("workbench.action.closeAllEditors")
 close tabs way right: user.vscode("workbench.action.closeEditorsToTheRight")
 close tabs way left: user.vscode("workbench.action.closeEditorsToTheLeft")
 
+# Groups
+group right: user.vscode("workbench.action.focusRightGroup")
+group left: user.vscode("workbench.action.focusLeftGroup")
+group up: user.vscode("workbench.action.focusAboveGroup")
+group down: user.vscode("workbench.action.focusBelowGroup")
+group next: user.vscode("workbench.action.focusNextGroup")
+group last: user.vscode("workbench.action.focusLastEditorGroup")
+group first: user.vscode("workbench.action.focusFirstEditorGroup")
+
 # Folding
 fold that: user.vscode("editor.fold")
 unfold that: user.vscode("editor.unfold")
@@ -299,3 +308,6 @@ preview markdown: user.vscode("markdown.showPreview")
 
 # C++
 head source: key(alt-o)
+
+# Copy Command Id
+copy command id: user.copy_command_id() 
