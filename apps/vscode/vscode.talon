@@ -166,7 +166,7 @@ group left: user.vscode("workbench.action.focusLeftGroup")
 group up: user.vscode("workbench.action.focusAboveGroup")
 group down: user.vscode("workbench.action.focusBelowGroup")
 group next: user.vscode("workbench.action.focusNextGroup")
-group last: user.vscode("workbench.action.focusLastEditorGroup")
+group final: user.vscode("workbench.action.focusLastEditorGroup")
 group first: user.vscode("workbench.action.focusFirstEditorGroup")
 
 # Folding
