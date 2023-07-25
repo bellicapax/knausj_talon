@@ -140,3 +140,6 @@ member <user.prose>$:
 member <user.prose> over:
     name = user.formatted_text(prose, "SNAKE_CASE")
     insert("_{name}")
+
+flute <digits>:
+    insert("{digits}.f")
