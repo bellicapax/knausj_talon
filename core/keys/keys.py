@@ -251,6 +251,7 @@ simple_keys = [
 ]
 
 alternate_keys = {
+    "soup": "space",
     "wipe": "backspace",
     "delete": "backspace",
     #'junk': 'backspace',
