@@ -19,12 +19,12 @@ tag(): user.code_operators_math
 tag(): user.code_operators_pointer
 
 settings():
-    user.code_private_function_formatter = "SNAKE_CASE"
-    user.code_protected_function_formatter = "SNAKE_CASE"
-    user.code_public_function_formatter = "SNAKE_CASE"
-    user.code_private_variable_formatter = "SNAKE_CASE"
-    user.code_protected_variable_formatter = "SNAKE_CASE"
-    user.code_public_variable_formatter = "SNAKE_CASE"
+    user.code_private_function_formatter = "PUBLIC_CAMEL_CASE"
+    user.code_protected_function_formatter = "PUBLIC_CAMEL_CASE"
+    user.code_public_function_formatter = "PUBLIC_CAMEL_CASE"
+    user.code_private_variable_formatter = "PUBLIC_CAMEL_CASE"
+    user.code_protected_variable_formatter = "PUBLIC_CAMEL_CASE"
+    user.code_public_variable_formatter = "PUBLIC_CAMEL_CASE"
 
 
 ^funky <user.text>$: user.code_default_function(text)
@@ -73,7 +73,7 @@ state assert:
 #   declare standard string function get text -> "std::string get_text()"
 #   declare void function pointer callback -> "void(* callback)()"
 (variable|declare) <user.cpp_raw_type> <user.text>$:
-    var_name = user.formatted_text(text, "SNAKE_CASE")
+    var_name = user.formatted_text(text, "PUBLIC_CAMEL_CASE")
     insert(user.cpp_build_declarator(cpp_raw_type, var_name))
 
 (variable|declare) <user.cpp_raw_type> <user.letter>:
@@ -134,12 +134,15 @@ is not (none|null) pointer: user.code_insert_is_not_null()
 is (none|null) pointer: user.code_insert_is_null()
 
 member <user.prose>$:
-    name = user.formatted_text(prose, "SNAKE_CASE")
+    name = user.formatted_text(prose, "PUBLIC_CAMEL_CASE")
     insert("_{name}")
 
 member <user.prose> over:
-    name = user.formatted_text(prose, "SNAKE_CASE")
+    name = user.formatted_text(prose, "PUBLIC_CAMEL_CASE")
     insert("_{name}")
 
 flute <digits>:
     insert("{digits}.f")
+
+deck <digits>:
+    insert("{digits}.0")
