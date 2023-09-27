@@ -1,4 +1,4 @@
-tag: user.cplusplus
+code.language: cplusplus
 -
 tag(): user.code_imperative
 
@@ -145,4 +145,4 @@ flute <digits>:
     insert("{digits}.f")
 
 deck <digits>:
-    insert("{digits}.0")
+    insert("{digits}.0g")
