@@ -118,10 +118,10 @@ equals zero: "= 0"
 equals default: "= default"
 equals delete: "= delete"
 
-state semi:
+finish:
     key(escape)
     edit.line_end()
-    insert(";\n")
+    insert(";")
 
 toggle includes: user.code_toggle_libraries()
 include <user.code_libraries>:
@@ -145,4 +145,4 @@ flute <digits>:
     insert("{digits}.f")
 
 deck <digits>:
-    insert("{digits}.0g")
+    insert("{digits}.0")
