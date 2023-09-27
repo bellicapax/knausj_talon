@@ -184,7 +184,9 @@ new line below | slap: edit.line_insert_down()
 
 # Undo/redo
 undo that: edit.undo()
+nope: edit.undo()
 redo that: edit.redo()
+yep yep: edit.redo()
 
 # Save
 disk: edit.save()
