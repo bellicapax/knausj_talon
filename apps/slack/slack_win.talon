@@ -47,6 +47,7 @@ bold: key(ctrl-b)
 emote <user.text>: "{text}"
 toggle left sidebar: key(ctrl-shift-d)
 toggle right sidebar: key(ctrl-.)
+(slack | lack) search: key(ctrl-g)
 
 # DEPRECATED
 (move | next) focus:
