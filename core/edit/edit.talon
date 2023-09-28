@@ -156,6 +156,7 @@ cut word right: user.cut_word_right()
 #     edit.cut()
 
 # Paste
+clipboard: key("super-v")
 (pace | paste) that: edit.paste()
 (pace | paste) enter:
     edit.paste()
