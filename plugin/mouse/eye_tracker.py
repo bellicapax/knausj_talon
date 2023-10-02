@@ -37,10 +37,6 @@ class EyeTrackerActions:
 
 @ctx_frozen.action_class("user")
 class FrozenActions:
-    def mouse_on_pop():
-        """Frozen mouse on pop handler"""
-        actions.mouse_click()
-
     def mouse_freeze_toggle(freeze: Optional[bool] = None):
         """Toggle freeze cursor position updates for the eye tracker"""
         mouse_freeze_toggle(freeze if freeze is not None else False)
