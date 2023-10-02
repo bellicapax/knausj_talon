@@ -14,7 +14,9 @@ mode: all
     speech.disable()
     user.engine_sleep()
 ^talon sleep [<phrase>]$: speech.disable()
-^quiet: speech.disable()
+^quiet: 
+    speech.disable()
+    user.mouse_sleep()
 ^(talon wake)+$: speech.enable()
 ^parrot sleep [<phrase>]$: mode.disable("noise")
 ^(parrot wake)+$: mode.enable("noise")
