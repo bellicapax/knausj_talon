@@ -1,4 +1,5 @@
-not tag: user.gamepad_tester
+not mode: sleep
+and not tag: user.gamepad_sleep
 -
 
 gamepad(dpad_up):           edit.up()
@@ -24,7 +25,7 @@ gamepad(south:up):          user.gamepad_mouse_move_slow_toggle(true)
 
 gamepad(l1:down):           user.gamepad_mouse_freeze(true)
 gamepad(l1:up):             user.gamepad_mouse_freeze(false)
-gamepad(r1):                user.go_forward()
+gamepad(r1):                user.gamepad_sleep_toggle()
 
 gamepad(l2:change):         user.gamepad_scroll(0, value*-1)
 gamepad(r2:change):         user.gamepad_scroll(0, value)

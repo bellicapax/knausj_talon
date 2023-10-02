@@ -1,4 +1,4 @@
-from talon import Module, actions, cron, ui, ctrl
+from talon import Module, Context, actions, cron, ui, ctrl
 from talon.screen import Screen
 import time
 
@@ -6,7 +6,11 @@ HOLD_TIMEOUT = 0.2
 
 screen: Screen = ui.main_screen()
 mod = Module()
+mod.tag("gamepad_sleep", "Indicates that the gamepad commands are inactive")
+ctx = Context()
+
 cron_job = None
+is_gamepad_asleep = False
 slow_scroll = False
 slow_mouse_move = True
 mouse_freeze_time = 0
@@ -16,6 +20,15 @@ _y = 0
 
 @mod.action_class
 class Actions:
+    def gamepad_sleep_toggle():
+        """Toggles the gamepad between its own wake and sleep modes"""
+        global is_gamepad_asleep
+        is_gamepad_asleep = not is_gamepad_asleep
+        if is_gamepad_asleep:
+            ctx.tags = ["user.gamepad_sleep"]
+        else:
+            ctx.tags = []
+        
     def gamepad_scroll(x: float, y: float):
         """Perform gamepad scrolling"""
         global cron_job, _x, _y
