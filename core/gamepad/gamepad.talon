@@ -1,5 +1,5 @@
 not mode: sleep
-and not tag: user.gamepad_sleep
+and not tag: gamepad_sleep
 -
 
 gamepad(dpad_up):           edit.up()
@@ -14,11 +14,10 @@ gamepad(dpad_right):        edit.right()
 
 gamepad(west:down):         mouse_drag()
 gamepad(west:up):           mouse_release()
-gamepad(north:down):        mouse_drag(1)
-gamepad(north:up):          mouse_release(1)
+gamepad(north:down):        mouse_click(2)
 gamepad(east):              user.mouse_click("control")
-gamepad(south:down):        user.gamepad_mouse_move_slow_toggle(false)
-gamepad(south:up):          user.gamepad_mouse_move_slow_toggle(true)
+gamepad(south:down):        mouse_drag(1)
+gamepad(south:up):          mouse_release(1)
 
 # gamepad(select):            user.quick_pick_show()
 # gamepad(start):             user.command_dictation_mode_toggle()
