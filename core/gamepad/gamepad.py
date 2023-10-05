@@ -26,8 +26,10 @@ class Actions:
         is_gamepad_asleep = not is_gamepad_asleep
         if is_gamepad_asleep:
             ctx.tags = ["user.gamepad_sleep"]
+            actions.user.hud_add_log('event', 'zzzzzzz')
         else:
             ctx.tags = []
+            actions.user.hud_add_log('success', 'game on girly!')
         
     def gamepad_scroll(x: float, y: float):
         """Perform gamepad scrolling"""
