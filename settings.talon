@@ -47,6 +47,8 @@ settings():
     # Set the total number of command history lines to display
     user.command_history_size = 50
 
+    user.cursorless_settings_directory = "my-cursorless\cursorless-settings"
+    
     # Uncomment to add a directory (relative to the Talon user dir) with additional
     # .snippet files. Changing this setting requires a restart of Talon.
     # user.snippets_dir = "snippets"
