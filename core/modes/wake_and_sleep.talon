@@ -17,6 +17,6 @@ mode: all
 ^quiet: 
     speech.disable()
     user.mouse_sleep()
-^(talon wake)+$: speech.enable()
+^(reddy | ready) spaghetti+$: speech.enable()
 ^parrot sleep [<phrase>]$: mode.disable("noise")
 ^(parrot wake)+$: mode.enable("noise")
