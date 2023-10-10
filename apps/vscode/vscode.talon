@@ -308,4 +308,4 @@ preview markdown: user.vscode("markdown.showPreview")
 head source: key(alt-o)
 
 # Copy Command Id
-copy command id: user.copy_command_id() s   
+copy command id: user.copy_command_id()
