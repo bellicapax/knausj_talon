@@ -1074,6 +1074,14 @@ class UserActions:
         actions.edit.line_insert_down()
         actions.insert(f"#include {text}")
 
+    def code_comment_documentation():
+        actions.user.insert_between("/**", "*/")
+    
+    def code_comment_documentation_block():
+        """Inserts a block document comment and positions the cursor appropriately"""
+        actions.user.insert_between("/**", "*/")
+        actions.key("enter")
+
     def code_block():
         # First delete existing selection, if any
         actions.insert(" ")

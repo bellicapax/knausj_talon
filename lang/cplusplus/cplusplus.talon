@@ -2,6 +2,7 @@ code.language: cplusplus
 -
 tag(): user.code_imperative
 
+tag(): user.code_comment_documentation
 tag(): user.code_comment_line
 tag(): user.code_comment_block_c_like
 tag(): user.code_data_bool
@@ -146,3 +147,6 @@ flute <digits>:
 
 deck <digits>:
     insert("{digits}.0")
+
+(doc|dock) line: user.code_comment_documentation()
+(doc|dock) block: user.code_comment_documentation_block()
