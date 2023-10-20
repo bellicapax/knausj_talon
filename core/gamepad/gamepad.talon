@@ -20,11 +20,11 @@ gamepad(south:down):        mouse_drag(1)
 gamepad(south:up):          mouse_release(1)
 
 # gamepad(select):            user.quick_pick_show()
-# gamepad(start):             user.command_dictation_mode_toggle()
+gamepad(start):             user.gamepad_sleep_toggle()
 
 gamepad(l1:down):           user.gamepad_mouse_freeze(true)
 gamepad(l1:up):             user.gamepad_mouse_freeze(false)
-gamepad(r1:down):           user.gamepad_sleep_toggle()
+# gamepad(r1:down):           user.gamepad_sleep_toggle()
 
 gamepad(l2:change):         user.gamepad_scroll(0, value*-1)
 gamepad(r2:change):         user.gamepad_scroll(0, value)
