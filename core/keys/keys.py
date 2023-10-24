@@ -188,6 +188,7 @@ symbol_key_words = {
     "right bracket": "]",
     "slash": "/",
     "backslash": "\\",
+    "quest": "?",
     "minus": "-",
     "dash": "-",
     "equals": "=",
@@ -246,12 +247,12 @@ simple_keys = [
     "insert",
     "pagedown",
     "pageup",
-    "space",
+    #"space",
     "tab",
 ]
 
 alternate_keys = {
-    "soup": "space",
+    "ta": "space",
     "wipe": "backspace",
     "delete": "backspace",
     #'junk': 'backspace',
