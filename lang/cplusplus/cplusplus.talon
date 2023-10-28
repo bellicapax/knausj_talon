@@ -38,7 +38,9 @@ state include system:
     insert('#include <>')
     edit.left()
 state include local:
-    insert('#include ""')
+    insert('#include ".h"')
+    edit.left()
+    edit.left()
     edit.left()
 state type deaf:
     insert('typedef ')
@@ -73,11 +75,11 @@ state assert:
 #   variable int air -> "int a"
 #   declare standard string function get text -> "std::string get_text()"
 #   declare void function pointer callback -> "void(* callback)()"
-(variable|declare) <user.cpp_raw_type> <user.text>$:
+(var|declare) <user.cpp_raw_type> <user.text>$:
     var_name = user.formatted_text(text, "PUBLIC_CAMEL_CASE")
     insert(user.cpp_build_declarator(cpp_raw_type, var_name))
 
-(variable|declare) <user.cpp_raw_type> <user.letter>:
+(var|declare) <user.cpp_raw_type> <user.letter>:
     insert(user.cpp_build_declarator(cpp_raw_type, letter))
 
 # Ex. (int *)
@@ -125,22 +127,17 @@ finish:
     insert(";")
 
 toggle includes: user.code_toggle_libraries()
-include <user.code_libraries>:
+include engine <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
+include local <user.cpp_user_libraries>:
+    user.code_insert_library(code_libraries, "")
+
 
 # Variants of data_null.talon that allow saying "null pointer"
 # without it resulting in "nullptr*"
 [state] (no | nil | null) pointer: user.code_insert_null()
 is not (none|null) pointer: user.code_insert_is_not_null()
 is (none|null) pointer: user.code_insert_is_null()
-
-member <user.prose>$:
-    name = user.formatted_text(prose, "PUBLIC_CAMEL_CASE")
-    insert("_{name}")
-
-member <user.prose> over:
-    name = user.formatted_text(prose, "PUBLIC_CAMEL_CASE")
-    insert("_{name}")
 
 flute <digits>:
     insert("{digits}.f")
@@ -150,3 +147,12 @@ deck <digits>:
 
 (doc|dock) line: user.code_comment_documentation()
 (doc|dock) block: user.code_comment_documentation_block()
+
+
+# UNREAL SPECIFIC 
+
+you property: 
+    insert("UPROPERTY()")
+    edit.left()
+
+override {user.cpp_user_overrides}: insert(user.cpp_user_overrides)

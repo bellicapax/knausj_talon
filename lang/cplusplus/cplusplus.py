@@ -255,8 +255,20 @@ ctx.lists["self.cpp_standard_types"] = {
     "future error code": "future_errc",
 }
 
+ctx.lists["user.cpp_user_overrides"] = {
+    "begin play": "virtual void BeginPlay() override;",
+    "tic component": "virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;",
+}
+
+ctx.lists["user.cpp_user_libraries"] = {
+    "crop air": "CcgErrors.h",
+    "header": ".h",
+}
+
 ctx.lists["user.code_libraries"] = {
     "engine types": "Engine/EngineTypes.h",
+    "actor": "GameFramework/Actor.h",
+    "header": ".h",
 }
 
 ctx.lists["user.code_functions"] = {
@@ -529,6 +541,7 @@ mod.list(
     "cpp_user_libraries",
     desc="Additional C++ headers (intended to be redefined with project-specific names)",
 )
+mod.list("cpp_user_overrides", desc="C++ commonly overridden functions")
 mod.list("cpp_standard_objects", desc="C++ objects in namespace std")
 mod.list("cpp_cast_style", desc="C++ cast operators")
 mod.list("cpp_access_specifiers", desc="C++ access specifiers")
