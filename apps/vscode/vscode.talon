@@ -305,7 +305,10 @@ install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
 
 # C++
-head source: key(alt-o)
+head source: user.vscode("C_Cpp.SwitchHeaderSource")
+implement this: user.vscode("cpp-helper.create-implementation")
 
 # Copy Command Id
 copy command id: user.copy_command_id()
+
+sort lines: user.vscode("editor.action.sortLinesAscending")
