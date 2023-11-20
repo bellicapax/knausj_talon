@@ -28,8 +28,8 @@ settings():
     user.code_public_variable_formatter = "PUBLIC_CAMEL_CASE"
 
 
-^funky <user.text>$: user.code_default_function(text)
-^static funky <user.text>$: user.code_private_static_function(text)
+# ^funky <user.text>$: user.code_default_function(text)
+# ^static funky <user.text>$: user.code_private_static_function(text)
 
 # NOTE: migrated from generic, as they were only used here, though once cpp support is added, perhaps these should be migrated to a tag together with the commands below
 state include:
@@ -155,4 +155,15 @@ you property:
     insert("UPROPERTY()")
     edit.left()
 
+you function: 
+    insert("UFUNCTION()")
+    edit.left()
+
 override {user.cpp_user_overrides}: insert(user.cpp_user_overrides)
+
+# Crop Circle
+
+add copyright:
+    edit.file_start()
+    edit.line_insert_up()
+    insert("// Copyright Crop Circle Games Corp.")

@@ -154,7 +154,7 @@ ctx.lists["self.cpp_standard_types"] = {
     # Containers library
     ## Sequence Containers
     "array": "array<>",
-    "vector": "vector<>",
+    # "vector": "vector<>",
     "deck": "deque<>",
     "forward list": "forward_list<>",
     "list": "list<>",
@@ -255,20 +255,44 @@ ctx.lists["self.cpp_standard_types"] = {
     "future error code": "future_errc",
 }
 
+ctx.lists["user.cpp_user_types"] = {
+    "object": "UObject",
+    "world": "UWorld",
+    "camera component": "UCameraComponent",
+    "actor": "AActor",
+    "player controller": "APlayerController",
+    "player character": "APlayerCharacter",
+    "vector": "FVector",
+    "to vector": "FVector2D",
+    "two vector": "FVector2D",
+    "too vector": "FVector2D",
+    "transform": "FTransform",
+    "view info": "FMinimalViewInfo",
+}
+
 ctx.lists["user.cpp_user_overrides"] = {
     "begin play": "virtual void BeginPlay() override;",
     "tic component": "virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;",
+    "calculate camera": "virtual void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;",
+    "post init components": "virtual void PostInitializeComponents() override;",
 }
 
 ctx.lists["user.cpp_user_libraries"] = {
     "crop air": "CcgErrors.h",
+    "camera manager": "Wells/Camera/WellsPlayerCameraManager.h",
+    "player character": "Wells/Character/PlayerCharacter.h",
     "header": ".h",
 }
 
 ctx.lists["user.code_libraries"] = {
-    "engine types": "Engine/EngineTypes.h",
-    "actor": "GameFramework/Actor.h",
     "header": ".h",
+    "optional": "Misc/Optional.h",
+    "actor": "GameFramework/Actor.h",
+    "actor component": "Components/ActorComponent.h",
+    "camera component": "Camera/CameraComponent.h",
+    "engine types": "Engine/EngineTypes.h",
+    "world": "Engine/World.h",
+    "player controller": "GameFramework/PlayerController.h",
 }
 
 ctx.lists["user.code_functions"] = {
@@ -945,7 +969,7 @@ class UserActions:
         actions.user.paste("false")
 
     def code_comment_line_prefix():
-        actions.auto_insert("//")
+        actions.auto_insert("// ")
 
     def code_insert_function(text: str, selection: str):
         if selection:
@@ -979,8 +1003,8 @@ class UserActions:
         actions.user.code_insert_function(result, None)
 
     def code_insert_library(text: str, selection: str):
-        actions.edit.file_start()
-        actions.user.select_next_occurrence("#include")
+        actions.edit.file_end()
+        actions.user.select_previous_occurrence("#include")
         actions.sleep("200ms")
         actions.edit.line_insert_up()
         actions.insert(f"#include {text}")
