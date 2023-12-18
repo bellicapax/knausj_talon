@@ -22,11 +22,12 @@ go view [<user.text>]:
 bar explore: user.vscode("workbench.view.explorer")
 bar extensions: user.vscode("workbench.view.extensions")
 bar outline: user.vscode("outline.focus")
-bar run: user.vscode("workbench.view.debug")
+bar debug: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
 bar test: user.vscode("workbench.view.testing.focus")
 bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
+bar usage: user.vscode("references-view.tree.focus")
 
 # Symbol search
 symbol hunt [<user.text>]:
@@ -240,8 +241,8 @@ test cancel: user.vscode("testing.cancelRun")
 # Debugging
 break point: user.vscode("editor.debug.action.toggleBreakpoint")
 step over: user.vscode("workbench.action.debug.stepOver")
-debug step into: user.vscode("workbench.action.debug.stepInto")
-debug step out [of]: user.vscode("workbench.action.debug.stepOut")
+step into: user.vscode("workbench.action.debug.stepInto")
+step out [of]: user.vscode("workbench.action.debug.stepOut")
 debug start: user.vscode("workbench.action.debug.start")
 debug pause: user.vscode("workbench.action.debug.pause")
 debug stopper: user.vscode("workbench.action.debug.stop")
@@ -307,6 +308,7 @@ preview markdown: user.vscode("markdown.showPreview")
 # C++
 head source: user.vscode("C_Cpp.SwitchHeaderSource")
 implement this: user.vscode("cpp-helper.create-implementation")
+build project: user.vscode("workbench.action.tasks.build")
 
 # Copy Command Id
 copy command id: user.copy_command_id()
