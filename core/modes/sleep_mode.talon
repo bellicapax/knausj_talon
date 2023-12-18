@@ -34,3 +34,7 @@ settings():
     user.mouse_wake()
     user.history_enable()
     user.talon_mode()
+
+^(reddy | ready) spaghetti+$: 
+    speech.enable()
+    user.omega_mouse_restart()
