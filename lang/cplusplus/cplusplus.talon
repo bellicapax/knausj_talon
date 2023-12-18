@@ -124,6 +124,7 @@ equals delete: "= delete"
 finish:
     key(escape)
     edit.line_end()
+    sleep(50ms)
     insert(";")
 
 toggle includes: user.code_toggle_libraries()
@@ -160,6 +161,9 @@ you function:
     edit.left()
 
 override {user.cpp_user_overrides}: insert(user.cpp_user_overrides)
+
+^small number: "SMALL_NUMBER"
+kind a small number: "KINDA_SMALL_NUMBER"
 
 # Crop Circle
 
