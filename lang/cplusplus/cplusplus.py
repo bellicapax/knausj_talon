@@ -262,6 +262,7 @@ ctx.lists["user.cpp_user_types"] = {
     "actor component": "UActorComponent",
     "scene component": "USceneComponent",
     "camera component": "UCameraComponent",
+    "spline component": "USplineComponent",
     "local player": "ULocalPlayer",
     "actor": "AActor",
     "player controller": "APlayerController",
@@ -283,6 +284,7 @@ ctx.lists["user.cpp_user_types"] = {
 
 ctx.lists["user.cpp_user_overrides"] = {
     "begin play": "virtual void BeginPlay() override;",
+    "end play": "virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;",
     "tic component": "virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;",
     "calculate camera": "virtual void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;",
     "post init components": "virtual void PostInitializeComponents() override;",
@@ -305,7 +307,9 @@ ctx.lists["user.code_libraries"] = {
     "engine types": "Engine/EngineTypes.h",
     "world": "Engine/World.h",
     "local player": "Engine/LocalPlayer.h",
+    "interface": "UObject/Interface.h",
     "actor component": "Components/ActorComponent.h",
+    "spline component": "Components/SplineComponent.h",
     "camera component": "Camera/CameraComponent.h",
     "actor": "GameFramework/Actor.h",
     "camera manager": "Camera/PlayerCameraManager.h",
