@@ -309,6 +309,7 @@ preview markdown: user.vscode("markdown.showPreview")
 head source: user.vscode("C_Cpp.SwitchHeaderSource")
 implement this: user.vscode("cpp-helper.create-implementation")
 build project: user.vscode("workbench.action.tasks.build")
+cancel build: user.vscode("workbench.action.tasks.terminate")
 
 # Copy Command Id
 copy command id: user.copy_command_id()
