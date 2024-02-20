@@ -8,9 +8,11 @@ screen: Screen = ui.main_screen()
 mod = Module()
 mod.tag("gamepad_sleep", "Indicates that the gamepad commands are inactive")
 ctx = Context()
+ctx.tags = ["user.gamepad_sleep"]
+
 
 cron_job = None
-is_gamepad_asleep = False
+is_gamepad_asleep = True
 slow_scroll = False
 slow_mouse_move = True
 mouse_freeze_time = 0
