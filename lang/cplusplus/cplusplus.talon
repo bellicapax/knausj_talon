@@ -93,11 +93,11 @@ state assert:
 {user.cpp_type_qualifiers}: "{cpp_type_qualifiers} "
 
 # "type" introduces a fully-general type.
-type <user.cpp_type>: "{cpp_type} "
+type <user.cpp_type>: "{cpp_type}"
 # Alternatively, words like "const", "pointer" or "standard" also start type-entry mode.
 <user.cpp_type_prefix> <user.cpp_raw_type>:
     ty = user.cpp_build_declarator_with_prefix(cpp_type_prefix, cpp_raw_type, '')
-    insert("{ty} ")
+    insert("{ty}")
 {user.cpp_standard} <user.cpp_unqualified_standard_generic_type>: "std::{cpp_unqualified_standard_generic_type} "
 # 'auto' is common enough that we allow skipping the "type" prefix
 auto: "auto "
@@ -146,9 +146,15 @@ flute <digits>:
 deck <digits>:
     insert("{digits}.0")
 
-(doc|dock) line: user.code_comment_documentation()
-(doc|dock) block: user.code_comment_documentation_block()
-
+scope: "::"
+^block$:
+    edit.line_insert_down()
+    insert("{")
+    edit.line_insert_down()
+    edit.line_insert_down()
+    insert("}")
+    edit.up()
+    key("tab")
 
 # UNREAL SPECIFIC 
 

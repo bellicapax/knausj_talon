@@ -262,9 +262,11 @@ ctx.lists["user.cpp_user_types"] = {
     "actor component": "UActorComponent",
     "scene component": "USceneComponent",
     "camera component": "UCameraComponent",
+    "dynamic camera": "UDynamicCameraComponent",
     "spline component": "USplineComponent",
     "local player": "ULocalPlayer",
     "actor": "AActor",
+    "pawn": "APawn",
     "player controller": "APlayerController",
     "player character": "APlayerCharacter",
     "instant struct": "FInstancedStruct",
@@ -273,36 +275,33 @@ ctx.lists["user.cpp_user_types"] = {
     "text": "FText",
     "vector": "FVector",
     "to vector": "FVector2D",
-    "two vector": "FVector2D",
-    "too vector": "FVector2D",
     "quat": "FQuat",
     "rotator": "FRotator",
     "moving pose": "FQuatPosVel",
     "transform": "FTransform",
+    "matrix": "FMatrix",
     "view info": "FMinimalViewInfo",
-}
-
-ctx.lists["user.cpp_user_overrides"] = {
-    "begin play": "virtual void BeginPlay() override;",
-    "end play": "virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;",
-    "tic component": "virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;",
-    "calculate camera": "virtual void CalcCamera(float DeltaTime, struct FMinimalViewInfo& OutResult) override;",
-    "post init components": "virtual void PostInitializeComponents() override;",
 }
 
 ctx.lists["user.cpp_user_libraries"] = {
     "crop air": "CcgErrors.h",
+    "task manager": "SquidTasks/TaskManager.h",
     "wells camera manager": "Wells/Camera/WellsPlayerCameraManager.h",
     "camera stack": "Wells/Camera/CameraStack.h",
+    "dynamic camera component": "Wells/Camera/DynamicCameraComponent.h",
     "player character": "Wells/Character/PlayerCharacter.h",
+    "player utils": "Wells/Character/PlayerUtils.h",
     "player movement": "Wells/Character/Movement/WellsPlayerMovementComponent.h",
     "rotation utils": "Wells/Utilities/Math/RotationUtils.h",
+    "camera utils": "Wells/Utilities/CameraUtils.h",
     "header": ".h",
 }
 
 ctx.lists["user.code_libraries"] = {
     "header": ".h",
+    "core minimal": "CoreMinimal.h",
     "optional": "Misc/Optional.h",
+    "unique": "Templates/UniquePtr.h",
     "instant struct": "InstancedStruct.h",
     "engine types": "Engine/EngineTypes.h",
     "world": "Engine/World.h",
@@ -312,8 +311,12 @@ ctx.lists["user.code_libraries"] = {
     "spline component": "Components/SplineComponent.h",
     "camera component": "Camera/CameraComponent.h",
     "actor": "GameFramework/Actor.h",
+    "blueprint library": "Kismet/BlueprintFunctionLibrary.h",
     "camera manager": "Camera/PlayerCameraManager.h",
+    "pawn": "GameFramework/Pawn.h",
     "player controller": "GameFramework/PlayerController.h",
+    "kismet math": "Kismet/KismetMathLibrary.h",
+    "gameplay statics": "Kismet/GameplayStatics.h",
 }
 
 ctx.lists["user.code_functions"] = {
@@ -584,7 +587,6 @@ mod.list(
     "cpp_user_libraries",
     desc="Additional C++ headers (intended to be redefined with project-specific names)",
 )
-mod.list("cpp_user_overrides", desc="C++ commonly overridden functions")
 mod.list("cpp_standard_objects", desc="C++ objects in namespace std")
 mod.list("cpp_cast_style", desc="C++ cast operators")
 mod.list("cpp_access_specifiers", desc="C++ access specifiers")
