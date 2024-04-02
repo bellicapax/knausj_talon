@@ -96,4 +96,4 @@ debug continue: key(f5)
 #Building
 build start: key(ctrl-b)
 build stop: key(ctrl-break)
-build run: key(f5)
+build run: key(ctrl-shift-b)
