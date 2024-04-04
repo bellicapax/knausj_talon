@@ -8,7 +8,6 @@ tag(): user.code_comment_block_c_like
 tag(): user.code_data_bool
 tag(): user.code_data_null
 tag(): user.code_functions
-tag(): user.code_functions_gui
 tag(): user.code_libraries
 tag(): user.code_libraries_gui
 tag(): user.code_object_oriented
@@ -128,8 +127,8 @@ finish:
     insert(";")
 
 toggle includes: user.code_toggle_libraries()
-include engine <user.code_libraries>:
-    user.code_insert_library(code_libraries, "")
+#include engine <user.code_libraries>:
+#    user.code_insert_library(code_libraries, "")
 include local <user.cpp_user_libraries>:
     user.code_insert_library(code_libraries, "")
 
@@ -155,25 +154,3 @@ scope: "::"
     insert("}")
     edit.up()
     key("tab")
-
-# UNREAL SPECIFIC 
-
-you property: 
-    insert("UPROPERTY()")
-    edit.left()
-
-you function: 
-    insert("UFUNCTION()")
-    edit.left()
-
-override {user.cpp_user_overrides}: insert(user.cpp_user_overrides)
-
-^small number: "SMALL_NUMBER"
-kind a small number: "KINDA_SMALL_NUMBER"
-
-# Crop Circle
-
-add copyright:
-    edit.file_start()
-    edit.line_insert_up()
-    insert("// Copyright Crop Circle Games Corp.")

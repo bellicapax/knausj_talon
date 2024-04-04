@@ -284,39 +284,6 @@ ctx.lists["user.cpp_user_types"] = {
 }
 
 ctx.lists["user.cpp_user_libraries"] = {
-    "crop air": "CcgErrors.h",
-    "task manager": "SquidTasks/TaskManager.h",
-    "wells camera manager": "Wells/Camera/WellsPlayerCameraManager.h",
-    "camera stack": "Wells/Camera/CameraStack.h",
-    "dynamic camera component": "Wells/Camera/DynamicCameraComponent.h",
-    "player character": "Wells/Character/PlayerCharacter.h",
-    "player utils": "Wells/Character/PlayerUtils.h",
-    "player movement": "Wells/Character/Movement/WellsPlayerMovementComponent.h",
-    "rotation utils": "Wells/Utilities/Math/RotationUtils.h",
-    "camera utils": "Wells/Utilities/CameraUtils.h",
-    "header": ".h",
-}
-
-ctx.lists["user.code_libraries"] = {
-    "header": ".h",
-    "core minimal": "CoreMinimal.h",
-    "optional": "Misc/Optional.h",
-    "unique": "Templates/UniquePtr.h",
-    "instant struct": "InstancedStruct.h",
-    "engine types": "Engine/EngineTypes.h",
-    "world": "Engine/World.h",
-    "local player": "Engine/LocalPlayer.h",
-    "interface": "UObject/Interface.h",
-    "actor component": "Components/ActorComponent.h",
-    "spline component": "Components/SplineComponent.h",
-    "camera component": "Camera/CameraComponent.h",
-    "actor": "GameFramework/Actor.h",
-    "blueprint library": "Kismet/BlueprintFunctionLibrary.h",
-    "camera manager": "Camera/PlayerCameraManager.h",
-    "pawn": "GameFramework/Pawn.h",
-    "player controller": "GameFramework/PlayerController.h",
-    "kismet math": "Kismet/KismetMathLibrary.h",
-    "gameplay statics": "Kismet/GameplayStatics.h",
 }
 
 ctx.lists["user.code_functions"] = {
@@ -579,6 +546,7 @@ mod.list(
     "cpp_standard_range_algorithms",
     desc="Functions that appear both in namespace std and std::ranges",
 )
+mod.list("code_functions", desc="C++ functions")
 mod.list(
     "cpp_user_functions",
     desc="Additional C++ functions (intended to be redefined with project-specific names)",
@@ -817,7 +785,7 @@ def code_functions(m) -> str:
     rule="{user.code_libraries} | {user.cpp_user_libraries}",
 )
 def code_libraries(m) -> str:
-    """Returns a function name"""
+    """Returns an include"""
     if m[0] in ctx.lists["user.code_libraries"].values():
         return f"<{m[0]}>"
     else:
