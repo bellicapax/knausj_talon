@@ -32,7 +32,17 @@ class Actions:
         else:
             ctx.tags = []
             actions.user.hud_add_log('success', 'game on girly!')
-        
+
+    def gamepad_sleep_set(enable: bool):
+        """Sets the gamepad between its own wake and sleep modes"""
+        is_gamepad_asleep = enable
+        if is_gamepad_asleep:
+            ctx.tags = ["user.gamepad_sleep"]
+            actions.user.hud_add_log('event', 'zzzzzzz')
+        else:
+            ctx.tags = []
+            actions.user.hud_add_log('success', 'game on girly!')
+
     def gamepad_scroll(x: float, y: float):
         """Perform gamepad scrolling"""
         global cron_job, _x, _y
@@ -75,7 +85,7 @@ class Actions:
         """Toggle gamepad slow mouse move mode"""
         global slow_mouse_move
         slow_mouse_move = enable
-        # actions.user.notify(f"Gamepad slow move: {slow_move}")
+        actions.user.notify(f"Gamepad slow move: {slow_mouse_move}")
 
     def gamepad_mouse_jump(direction: str):
         """Move the mouse cursor to the specified quadrant of the active screen"""

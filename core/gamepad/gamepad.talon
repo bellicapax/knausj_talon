@@ -24,13 +24,16 @@ gamepad(south:up):          mouse_release(1)
 
 gamepad(l1:down):           user.gamepad_mouse_freeze(true)
 gamepad(l1:up):             user.gamepad_mouse_freeze(false)
-# gamepad(r1:down):           user.gamepad_sleep_toggle()
+
+gamepad(r1:down):           user.gamepad_mouse_move_slow_toggle(false)
+gamepad(r1:up):             user.gamepad_mouse_move_slow_toggle(true)
 
 gamepad(l2:change):         user.gamepad_scroll(0, value*-1)
 gamepad(r2:change):         user.gamepad_scroll(0, value)
 
 gamepad(left_xy:repeat):    user.gamepad_mouse_move(x, y*-1)
-gamepad(l3):                user.gamepad_mouse_move_slow_toggle()
 
 gamepad(right_xy):          user.gamepad_scroll(x, y*-1)
 gamepad(r3):                user.gamepad_scroll_slow_toggle()
+
+gamepad toggle: user.gamepad_sleep_toggle()
