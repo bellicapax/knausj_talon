@@ -248,7 +248,7 @@ simple_keys = [
     "pagedown",
     "pageup",
     #"space",
-    "tab",
+    # "tab",
 ]
 
 alternate_keys = {
@@ -259,6 +259,7 @@ alternate_keys = {
     "scrub": "delete",
     "page up": "pageup",
     "page down": "pagedown",
+    "next": "tab",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
