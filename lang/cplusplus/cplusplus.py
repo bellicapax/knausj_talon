@@ -286,6 +286,9 @@ ctx.lists["user.cpp_user_types"] = {
 ctx.lists["user.cpp_user_libraries"] = {
 }
 
+ctx.lists["user.cpp_user_functions"] = {
+}
+
 ctx.lists["user.code_functions"] = {
     "mem copy": "memcpy",
     "mem set": "memset",
@@ -757,8 +760,7 @@ def cpp_unqualified_standard_generic_type(m) -> str:
         return m[0]
 
 
-@ctx.capture(
-    "user.code_functions",
+@mod.capture(
     rule=rm_newlines(
         """
         {user.code_functions}

@@ -68,6 +68,8 @@ state assert:
     insert("assert();")
     edit.left()
     edit.left()
+state co await: "co_await "
+state co return: "co_return "
 
 # Declare variables or structs etc.
 # Examples:
