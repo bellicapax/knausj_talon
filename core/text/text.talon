@@ -14,26 +14,6 @@ word <user.word>:
     user.add_phrase_to_history(word)
     insert(word)
 proud <user.word>: user.insert_formatted(word, "CAPITALIZE_FIRST_WORD")
-^(se | sea | see) plus$:
-    insert("``")
-    edit.left()
-(se | sea | see) plus <user.prose>$:
-    insert("``")
-    edit.left()
-    user.insert_formatted(prose, "PUBLIC_CAMEL_CASE")
-^(se | sea | see) plus block$:
-    insert("```cpp")
-    edit.line_insert_down()
-    edit.line_insert_down()
-    insert("```")
-    edit.up()
-(se | sea | see) plus block <user.prose>$:
-    insert("```cpp")
-    edit.line_insert_down()
-    edit.line_insert_down()
-    insert("```")
-    edit.up()
-    user.insert_formatted(prose, "PUBLIC_CAMEL_CASE")
 ^wiki link$:
     insert("[[]]")
     edit.left()
@@ -54,7 +34,3 @@ select that: user.select_last_phrase()
 before that: user.before_last_phrase()
 scratch that: user.clear_last_phrase()
 nope that was <user.formatters>: user.formatters_reformat_last(formatters)
-another: insert(", ")
-theses: insert("()")
-(data|dada): ". "
-^list item$: insert("- [ ] ")
