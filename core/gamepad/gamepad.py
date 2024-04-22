@@ -85,7 +85,7 @@ class Actions:
         """Toggle gamepad slow mouse move mode"""
         global slow_mouse_move
         slow_mouse_move = enable
-        actions.user.notify(f"Gamepad slow move: {slow_mouse_move}")
+        # actions.user.notify(f"Gamepad slow move: {slow_mouse_move}")
 
     def gamepad_mouse_jump(direction: str):
         """Move the mouse cursor to the specified quadrant of the active screen"""

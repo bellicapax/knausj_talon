@@ -36,4 +36,4 @@ gamepad(left_xy:repeat):    user.gamepad_mouse_move(x, y*-1)
 gamepad(right_xy):          user.gamepad_scroll(x, y*-1)
 gamepad(r3):                user.gamepad_scroll_slow_toggle()
 
-gamepad toggle: user.gamepad_sleep_toggle()
+^joystick$: user.gamepad_sleep_toggle()
