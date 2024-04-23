@@ -27,7 +27,6 @@ bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
 bar test: user.vscode("workbench.view.testing.focus")
 bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
-bar usage: user.vscode("references-view.tree.focus")
 
 # Symbol search
 symbol hunt [<user.text>]:
@@ -144,29 +143,10 @@ toggle mark: user.vscode("bookmarks.toggle")
 mark next: user.vscode("bookmarks.jumpToNext")
 mark last: user.vscode("bookmarks.jumpToPrevious")
 
-# Tabs
-tab keep:
-    key("ctrl-k")
-    sleep(50ms)
-    key("enter")
-tab pin:
-    key("ctrl-k")
-    sleep(50ms)
-    key("shift-enter")
 close other tabs: user.vscode("workbench.action.closeOtherEditors")
 close all tabs: user.vscode("workbench.action.closeAllEditors")
 close tabs way right: user.vscode("workbench.action.closeEditorsToTheRight")
 close tabs way left: user.vscode("workbench.action.closeEditorsToTheLeft")
-
-# Groups
-group right: user.vscode("workbench.action.focusRightGroup")
-group left: user.vscode("workbench.action.focusLeftGroup")
-group up: user.vscode("workbench.action.focusAboveGroup")
-group down: user.vscode("workbench.action.focusBelowGroup")
-group next: user.vscode("workbench.action.focusNextGroup")
-group last: user.vscode("workbench.action.focusPreviousGroup")
-group final: user.vscode("workbench.action.focusLastEditorGroup")
-group first: user.vscode("workbench.action.focusFirstEditorGroup")
 
 # Folding
 fold that: user.vscode("editor.fold")
@@ -304,14 +284,3 @@ cell run: user.vscode("notebook.cell.execute")
 
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
-
-# C++
-head source: user.vscode("C_Cpp.SwitchHeaderSource")
-implement this: user.vscode("cpp-helper.create-implementation")
-build project: user.vscode("workbench.action.tasks.build")
-cancel build: user.vscode("workbench.action.tasks.terminate")
-
-# Copy Command Id
-copy command id: user.copy_command_id()
-
-sort lines: user.vscode("editor.action.sortLinesAscending")
