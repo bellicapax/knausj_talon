@@ -252,7 +252,7 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "ta": "space",
+    "pa": "space",
     "wipe": "backspace",
     "delete": "backspace",
     #'junk': 'backspace',
