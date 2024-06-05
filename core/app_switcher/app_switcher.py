@@ -7,7 +7,7 @@ from pathlib import Path
 import talon
 from talon import Context, Module, actions, app, fs, imgui, ui
 
-# Construct a list of spoken form overrides for application names (similar to how homophone list is managed)
+# Construct a list of spoken form overrides for application namwindowses (similar to how homophone list is managed)
 # These overrides are used *instead* of the generated spoken forms for the given app name or .exe (on Windows)
 # CSV files contain lines of the form:
 # <spoken form>,<app name or .exe> - to add a spoken form override for the app, or

@@ -256,31 +256,6 @@ ctx.lists["self.cpp_standard_types"] = {
 }
 
 ctx.lists["user.cpp_user_types"] = {
-    "object": "UObject",
-    "world": "UWorld",
-    "game instance": "UGameInstance",
-    "actor component": "UActorComponent",
-    "scene component": "USceneComponent",
-    "camera component": "UCameraComponent",
-    "dynamic camera": "UDynamicCameraComponent",
-    "spline component": "USplineComponent",
-    "local player": "ULocalPlayer",
-    "actor": "AActor",
-    "pawn": "APawn",
-    "player controller": "APlayerController",
-    "player character": "APlayerCharacter",
-    "instant struct": "FInstancedStruct",
-    "string": "FString",
-    "name": "FName",
-    "text": "FText",
-    "vector": "FVector",
-    "to vector": "FVector2D",
-    "quat": "FQuat",
-    "rotator": "FRotator",
-    "moving pose": "FQuatPosVel",
-    "transform": "FTransform",
-    "matrix": "FMatrix",
-    "view info": "FMinimalViewInfo",
 }
 
 ctx.lists["user.cpp_user_libraries"] = {

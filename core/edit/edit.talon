@@ -17,13 +17,9 @@ go word left: edit.word_left()
 go word right: edit.word_right()
 
 go left: edit.left()
-pop: edit.left()
 go right: edit.right()
-push: edit.right()
 go up: edit.up()
-crane: edit.up()
 go down: edit.down()
-dunk: edit.down()
 
 go line start | head: edit.line_start()
 go line end | tail: edit.line_end()

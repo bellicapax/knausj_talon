@@ -91,7 +91,7 @@ debug step into: key(f11)
 debug step out [of]: key(shift-f11)
 debug start: key(f5)
 debug stopper: key(shift-f5)
-debug continue: key(f5)
+debug continue: key(ctrl-shift-b)
 
 #Building
 build start: key(ctrl-b)

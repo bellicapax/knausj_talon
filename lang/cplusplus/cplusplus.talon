@@ -90,7 +90,7 @@ state co return: "co_return "
     user.cpp_insert_cast(cpp_cast_style, cpp_type)
 
 # e.g. use "const" to insert a const modifier at the cursor position
-{user.cpp_pointers}: "{cpp_pointers}"
+# {user.cpp_pointers}: "{cpp_pointers}"
 {user.cpp_type_qualifiers}: "{cpp_type_qualifiers} "
 
 # "type" introduces a fully-general type.
@@ -102,17 +102,17 @@ type <user.cpp_type>: "{cpp_type}"
 {user.cpp_standard} <user.cpp_unqualified_standard_generic_type>: "std::{cpp_unqualified_standard_generic_type} "
 # 'auto' is common enough that we allow skipping the "type" prefix
 auto: "auto "
-call <user.code_functions>:
-    user.cpp_insert_call("{code_functions}")
-{user.cpp_standard} double colon: "std::"
-{user.cpp_standard} {user.cpp_standard_functions}:
-    user.cpp_insert_call("std::{cpp_standard_functions}")
-{user.cpp_standard} {user.cpp_standard_range_algorithms}:
-    user.cpp_insert_call("std::{cpp_standard_range_algorithms}")
-{user.cpp_standard} ranges {user.cpp_standard_range_algorithms}:
-    user.cpp_insert_call("std::ranges::{cpp_standard_range_algorithms}")
+# call <user.code_functions>:
+#     user.cpp_insert_call("{code_functions}")
+# {user.cpp_standard} double colon: "std::"
+# {user.cpp_standard} {user.cpp_standard_functions}:
+#     user.cpp_insert_call("std::{cpp_standard_functions}")
+# {user.cpp_standard} {user.cpp_standard_range_algorithms}:
+#     user.cpp_insert_call("std::{cpp_standard_range_algorithms}")
+# {user.cpp_standard} ranges {user.cpp_standard_range_algorithms}:
+#     user.cpp_insert_call("std::ranges::{cpp_standard_range_algorithms}")
 
-{user.cpp_standard} {user.cpp_standard_objects}: "std::{cpp_standard_objects}"
+# {user.cpp_standard} {user.cpp_standard_objects}: "std::{cpp_standard_objects}"
 access {user.cpp_access_specifiers}: "{cpp_access_specifiers}:\n"
 {user.cpp_declaration_specifiers}: "{cpp_declaration_specifiers} "
 
@@ -141,11 +141,8 @@ include local <user.cpp_user_libraries>:
 is not (none|null) pointer: user.code_insert_is_not_null()
 is (none|null) pointer: user.code_insert_is_null()
 
-flute <digits>:
-    insert("{digits}.f")
-
-deck <digits>:
-    insert("{digits}.0")
+flute <number>:
+    insert("{number}.f")
 
 scope: "::"
 ^block$:
