@@ -1,5 +1,16 @@
 tag: user.find_and_replace
 -
+hunt now:
+    user.find("")
+    user.find_next()
+hunt now (pace | paste):
+    user.find("")
+    sleep(25ms)
+    edit.paste()
+    user.find_next()
+hunt now <user.text>:
+    user.find(text)
+    user.find_next()
 hunt this: user.find("")
 hunt this (pace | paste):
     user.find("")
