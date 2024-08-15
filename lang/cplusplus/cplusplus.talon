@@ -125,7 +125,7 @@ equals delete: "= delete"
 finish:
     key(escape)
     edit.line_end()
-    sleep(50ms)
+    sleep(100ms)
     insert(";")
 
 toggle includes: user.code_toggle_libraries()
