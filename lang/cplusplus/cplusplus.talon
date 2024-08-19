@@ -153,3 +153,13 @@ scope: "::"
     insert("}")
     edit.up()
     key("tab")
+
+^public$: 
+    edit.delete_line()
+    insert("public:")
+^protected$: 
+    edit.delete_line()
+    insert("protected:")
+^private$: 
+    edit.delete_line()
+    insert("private:")
