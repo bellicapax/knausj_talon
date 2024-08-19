@@ -258,6 +258,9 @@ ctx.lists["self.cpp_standard_types"] = {
 ctx.lists["user.cpp_user_types"] = {
 }
 
+ctx.lists["user.cpp_unreal_types"] = {
+}
+
 ctx.lists["user.cpp_user_libraries"] = {
 }
 
@@ -519,6 +522,10 @@ mod.list(
     "cpp_user_types",
     desc="Additional C++ types (intended to be redefined with project-specific names)",
 )
+mod.list(
+    "cpp_unreal_types",
+    desc="Additional Unreal C++ types",
+)
 mod.list("cpp_standard_functions", desc="C++ functions in namespace std")
 mod.list(
     "cpp_standard_range_algorithms",
@@ -576,6 +583,7 @@ def cpp_fixed_width_integer_type(m) -> str:
             [{self.cpp_type_sign_modifiers}] {self.cpp_simple_types}
           | {self.cpp_standard} {self.cpp_standard_types}
           | {self.cpp_standard} <self.cpp_fixed_width_integer_type>
+          | {self.cpp_unreal_types}
           | {self.cpp_user_types}
           | <self.cpp_fixed_width_integer_type>
         """
